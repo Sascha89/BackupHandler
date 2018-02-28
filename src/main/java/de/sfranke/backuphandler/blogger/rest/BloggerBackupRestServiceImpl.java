@@ -6,9 +6,11 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-//127.0.0.1/BackupHandler/rest/hello/print
+import de.sfranke.backuphandler.BackupRestService;
+
+//http://127.0.0.1/BackupHandler/rest/v1.0/hello/print
 @Path("/hello")
-public class HelloWorldService{
+public class BloggerBackupRestServiceImpl implements BackupRestService{
 
 	@GET
     @Path("/print")
