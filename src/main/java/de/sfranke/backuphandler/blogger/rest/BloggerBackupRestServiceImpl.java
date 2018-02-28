@@ -8,18 +8,25 @@ import javax.ws.rs.core.Response;
 
 import de.sfranke.backuphandler.BackupRestService;
 
-//http://127.0.0.1/BackupHandler/rest/v1.0/hello/print
-@Path("/hello")
+//GET http://127.0.0.1/BackupHandler/rest/v1.0/blogger/backup/start
+//GET http://127.0.0.1/BackupHandler/rest/v1.0/blogger/backup/getLatestBackupDate
+
+@Path("/blogger/backup")
 public class BloggerBackupRestServiceImpl implements BackupRestService{
 
 	@GET
-    @Path("/print")
+	@Path("/start")
+	public Response startBackup() {
+		//TODO
+		return Response.status(200).entity("Backup succeeded").build();
+	}
+	
+	@GET
+	@Path("/getLatestBackupDate")
 	@Produces(MediaType.TEXT_PLAIN)
-    public Response getMsg() {
-		//@PathParam("name") String name
-        //String output = "Welcome   : " + name;
-		String output = "Welcome User!";
-        return Response.status(200).entity(output).build();
-    }
-  
+	public Response getLatestBackupDate() {
+		// TODO Auto-generated method stub
+		String latestBackupDate = "2018-01-01 01:00:00";
+		return Response.status(200).entity(latestBackupDate).build();
+	}
 }
