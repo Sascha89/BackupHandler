@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  tomcat:
+    image: tomcat:8.0
+    ports:
+      - "80:8080"
+    volumes:
+      - ./target/BackupHandler:/usr/local/tomcat/webapps/BackupHandler
+      - ./target/classes:/usr/local/tomcat/webapps/classes
+      - ./target/maven-archiver:/usr/local/tomcat/webapps/maven-archiver
+      - ./target/maven-status:/usr/local/tomcat/webapps/maven-status
+      - ./target/BackupHandler.war:/usr/local/tomcat/webapps/BackupHandler.war
+      - ./conf/tomcat/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
+    environmant:
+      - "JPDA_ADDRESS=8000"
+      - "JPDA_TRANSPORT=dt_socket"
+    command: ["catalina.sh", "jpda", "start"]
