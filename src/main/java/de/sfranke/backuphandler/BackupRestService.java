@@ -8,7 +8,6 @@ import javax.ws.rs.core.Response;
 
 public interface BackupRestService {
 	
-	
 	@GET
 	@Path("/start")
 	@Produces(MediaType.TEXT_PLAIN)

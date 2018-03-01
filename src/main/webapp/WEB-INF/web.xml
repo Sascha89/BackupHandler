@@ -12,25 +12,21 @@
 			<param-value>de.sfranke.backuphandler.blogger.rest</param-value>
 		</init-param>
 	</servlet>
-	<!-- 
 	<servlet>
-		<servlet-name>xyz</servlet-name>
+		<servlet-name>OAuth</servlet-name>
 		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
 		<init-param>
 			<param-name>com.sun.jersey.config.property.packages</param-name>
-			<param-value>de.sfranke.backuphandler.xyz.rest</param-value>
+			<param-value>de.sfranke.backuphandler.oauth.rest</param-value>
 		</init-param>
 	</servlet>
-	 -->
 
    <servlet-mapping>
       <servlet-name>Blogger</servlet-name>
-      <url-pattern>/rest/v1.0/*</url-pattern>
+      <url-pattern>/rest/blogger/v1.0/*</url-pattern>
    </servlet-mapping>
-   <!-- 
-    <servlet-mapping>
-      <servlet-name>xyz</servlet-name>
-      <url-pattern>/rest/v1.0/*</url-pattern>
+   <servlet-mapping>
+      <servlet-name>OAuth</servlet-name>
+      <url-pattern>/rest/oauth/v1.0/*</url-pattern>
    </servlet-mapping>
-    -->
 </web-app>
