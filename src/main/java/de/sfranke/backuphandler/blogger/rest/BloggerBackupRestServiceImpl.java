@@ -24,7 +24,6 @@ public class BloggerBackupRestServiceImpl implements BackupRestService{
 	@GET
 	@Path("/getLatestBackupDate")
 	@Produces(MediaType.TEXT_PLAIN)
-	@Override
 	public Response getLatestBackupDate() {
 		// TODO Auto-generated method stub
 		String latestBackupDate = "2018-01-01 01:00:00";
